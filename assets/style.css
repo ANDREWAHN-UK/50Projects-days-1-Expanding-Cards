@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    display: flex;   
+    /* below centres the colum horizontally, i.e. left and right */
+    align-items: center;
+    /* below centres the column vertically, i.e. top and bottom */
+    justify-content: center;
+    /* justify-content: center neds a height to work */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* this holds the panels */
+.container{
+    display:flex;
+   width: 90vw;
+}
+
+    /* panel means card in this context */
+.panel{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;    
+}
+
+
+/* this positions the text for each card but also renders it invisible until it is part of the active class */
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+/* this changes what happens to a panel when it becomes the active panel */
+.panel.active{
+flex: 5;
+}
+
+/* this changes what happens to the text when it becomes part of the active panel */
+.panel.active h3{
+    opacity: 1;
+}
+/* the below are to allocate a picture to each card/panel */
+.one{
+background-image: url(media/boxer-1.jpg);
+}
+
+.two{
+    background-image: url(media/boxer-two.jpg);   
+}
+
+.three{
+    background-image: url(media/boxer-three.jpg);
+}
+
+.four{
+    background-image: url(media/boxer-four.jpeg);
+}
+
+.five{
+    background-image: url(media/boxer-five.jpg);
+}
+
+@media(max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+
+    .four,.five{
+        display:none;
+    }
+}
